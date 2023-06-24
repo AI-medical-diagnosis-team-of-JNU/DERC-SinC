@@ -64,7 +64,7 @@ def train_net(
             _, f_rec = pretrain_net(batch_rec)
             output_rec = net_head(f_rec)
 
-            loss_head = F.nll_loss(output, batch_label) + 0.3 * F.nll_loss(output_rec, batch_label)
+            loss_head = F.nll_loss(output, batch_label)
 
             Loss_Head += loss_head.detach()
 
@@ -92,7 +92,7 @@ def train_net(
             _, f_rec = pretrain_net(batch_rec)
             output_rec = net_head(f_rec)
 
-            loss_medium = F.nll_loss(output, batch_label) + 0.3 * F.nll_loss(output_rec, batch_label)
+            loss_medium = F.nll_loss(output, batch_label)
 
             Loss_Medium += loss_medium.detach()
 
@@ -119,7 +119,7 @@ def train_net(
             _, f_rec = pretrain_net(batch_rec)
             output_rec = net_head(f_rec)
 
-            loss_tail = F.nll_loss(output, batch_label) + 0.3 * F.nll_loss(output_rec, batch_label)
+            loss_tail = F.nll_loss(output, batch_label)
             Loss_Tail += loss_tail.detach()
 
             optimizer_tail.zero_grad()
